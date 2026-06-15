@@ -1,118 +1,780 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fogão Electrolux 4 Bocas</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fogão Electrolux 4 Bocas — Oferta Especial</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
   <style>
-    *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
-    body{background:#f5f5f5;color:#222}
-    header{background:#fff;padding:14px;text-align:center;font-weight:bold;border-bottom:1px solid #ddd}
-    .container{max-width:480px;margin:auto;background:#fff;min-height:100vh}
-    .hero img{width:100%;display:block}
-    .content{padding:18px}
-    .badge{background:#e8f5e9;color:#168331;padding:8px 12px;border-radius:20px;display:inline-block;font-weight:bold;margin-bottom:10px}
-    h1{font-size:28px;margin-bottom:8px}
-    .price{font-size:42px;font-weight:bold;color:#0b7d2b;margin:12px 0}
-    .old{text-decoration:line-through;color:#777;font-size:16px}
-    .benefits{margin:16px 0}
-    .benefits p{margin:9px 0;font-size:17px}
-    .timer{background:#fff3cd;border:1px solid #ffe08a;padding:14px;border-radius:10px;text-align:center;margin:18px 0}
-    .timer strong{font-size:28px;color:#c0392b}
-    .btn{display:block;background:#159447;color:#fff;text-align:center;padding:17px;border-radius:10px;text-decoration:none;font-size:20px;font-weight:bold;margin:18px 0}
-    .gallery{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 18px 18px}
-    .gallery img{width:100%;border-radius:8px}
-    .comments{padding:18px;background:#fafafa}
-    .comment{background:#fff;padding:14px;border-radius:10px;margin-bottom:12px;border:1px solid #ddd}
-    .stars{color:#f5b400;font-size:18px}
-    .name{font-weight:bold;margin-top:6px}
-    footer{text-align:center;font-size:13px;color:#666;padding:20px}
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #0a9e45;
+      --green-dark: #077c35;
+      --green-light: #e6f7ee;
+      --green-mid: #0db34f;
+      --red: #d32f2f;
+      --yellow: #f5a623;
+      --bg: #f2f4f3;
+      --card: #ffffff;
+      --text: #111;
+      --muted: #6b7280;
+      --border: #e4e7eb;
+      --radius: 14px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', Arial, sans-serif;
+      min-height: 100vh;
+    }
+
+    /* TOP BAR */
+    .topbar {
+      background: var(--green-dark);
+      color: #fff;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 9px 16px;
+      letter-spacing: .02em;
+    }
+    .topbar span { background: #fff; color: var(--green-dark); border-radius: 4px; padding: 1px 7px; margin-left: 6px; font-size: 12px; }
+
+    /* WRAPPER */
+    .wrap {
+      max-width: 480px;
+      margin: 0 auto;
+      background: var(--card);
+      min-height: 100vh;
+      box-shadow: 0 0 40px rgba(0,0,0,.08);
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo { font-size: 15px; font-weight: 800; color: var(--green-dark); letter-spacing: -.02em; }
+    .trust-pill {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--green-light);
+      border-radius: 20px;
+      padding: 5px 11px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--green-dark);
+    }
+    .trust-pill svg { width: 14px; height: 14px; }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      background: linear-gradient(160deg, #e8f5ee 0%, #f0f9f4 60%, #fafffe 100%);
+      padding: 28px 20px 0;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(10,158,69,.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--green-dark);
+      color: #fff;
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .eyebrow-dot { width: 7px; height: 7px; background: #fff; border-radius: 50%; animation: blink 1.4s ease-in-out infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+    .hero h1 {
+      font-size: 30px;
+      font-weight: 900;
+      line-height: 1.12;
+      color: #0c1a10;
+      letter-spacing: -.03em;
+      margin-bottom: 6px;
+    }
+    .hero h1 em { color: var(--green); font-style: normal; }
+    .hero-sub {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 22px;
+      line-height: 1.5;
+    }
+
+    .hero-img-wrap {
+      position: relative;
+      display: inline-block;
+    }
+    .hero-img-wrap img {
+      width: 100%;
+      max-width: 340px;
+      display: block;
+      filter: drop-shadow(0 18px 32px rgba(0,0,0,.14));
+      position: relative;
+      z-index: 1;
+    }
+    .badge-float {
+      position: absolute;
+      top: 12px;
+      right: -8px;
+      background: var(--red);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      border-radius: 50%;
+      width: 68px;
+      height: 68px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      line-height: 1.15;
+      box-shadow: 0 4px 14px rgba(211,47,47,.35);
+      z-index: 2;
+      text-align: center;
+    }
+    .badge-float small { font-size: 10px; font-weight: 600; }
+
+    /* PRICE STRIP */
+    .price-strip {
+      background: #fff;
+      padding: 22px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .price-row {
+      display: flex;
+      align-items: flex-end;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+    .price-main {
+      font-size: 48px;
+      font-weight: 900;
+      color: var(--green);
+      line-height: 1;
+      letter-spacing: -.04em;
+    }
+    .price-cents { font-size: 28px; }
+    .price-old {
+      font-size: 16px;
+      color: var(--muted);
+      text-decoration: line-through;
+      padding-bottom: 6px;
+    }
+    .price-save {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #fef3f2;
+      color: var(--red);
+      border: 1px solid #fecaca;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 5px 12px;
+    }
+    .installment {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    /* TIMER */
+    .timer-wrap {
+      margin: 16px 20px;
+      background: #fffbeb;
+      border: 1.5px solid #fde68a;
+      border-radius: var(--radius);
+      padding: 16px 18px;
+    }
+    .timer-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #92400e;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .timer-label svg { color: #d97706; }
+    .timer-digits {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .digit-box {
+      background: #1c1917;
+      color: #fef9c3;
+      border-radius: 8px;
+      padding: 8px 13px;
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: -.02em;
+      min-width: 54px;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+    }
+    .digit-sep { font-size: 24px; font-weight: 900; color: #92400e; }
+    .timer-note { font-size: 12px; color: #92400e; margin-top: 10px; }
+
+    /* CTA */
+    .cta-wrap { padding: 0 20px 20px; }
+    .btn-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--green);
+      color: #fff;
+      text-align: center;
+      padding: 19px 20px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -.01em;
+      box-shadow: 0 6px 24px rgba(10,158,69,.38), 0 1px 3px rgba(0,0,0,.1);
+      transition: transform .15s, box-shadow .15s;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-cta::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .btn-cta:active { transform: scale(.98); }
+    .btn-cta svg { width: 22px; height: 22px; flex-shrink: 0; }
+    .btn-cta-sub {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+    .btn-cta-sub span { display: flex; align-items: center; gap: 4px; }
+    .btn-cta-sub svg { width: 13px; height: 13px; color: var(--green); }
+
+    /* SECTION */
+    section { padding: 24px 20px; border-top: 1px solid var(--border); }
+    .section-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #0c1a10;
+      letter-spacing: -.02em;
+      margin-bottom: 16px;
+    }
+
+    /* BENEFITS */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .benefit-card {
+      background: var(--green-light);
+      border-radius: 12px;
+      padding: 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .benefit-icon { font-size: 22px; }
+    .benefit-title { font-size: 13px; font-weight: 700; color: #0c1a10; }
+    .benefit-desc { font-size: 12px; color: #3d7a55; line-height: 1.4; }
+
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      display: block;
+      aspect-ratio: 1;
+      object-fit: cover;
+      background: var(--bg);
+    }
+    .gallery img:first-child {
+      grid-column: 1 / -1;
+      aspect-ratio: 16/9;
+    }
+
+    /* HOW IT WORKS */
+    .steps { display: flex; flex-direction: column; gap: 0; }
+    .step {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .step:last-child { border-bottom: none; }
+    .step-num {
+      min-width: 36px; height: 36px;
+      background: var(--green);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; font-weight: 800;
+      flex-shrink: 0;
+    }
+    .step-body { flex: 1; }
+    .step-title { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+    .step-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+    /* SOCIAL PROOF BAR */
+    .social-bar {
+      background: var(--green-dark);
+      color: #fff;
+      padding: 14px 20px;
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .social-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+    .social-num { font-size: 22px; font-weight: 900; letter-spacing: -.02em; }
+    .social-label { font-size: 11px; opacity: .8; font-weight: 500; }
+
+    /* REVIEWS */
+    .reviews { display: flex; flex-direction: column; gap: 12px; }
+    .review {
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+    }
+    .review-top { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .avatar {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--green-light);
+      color: var(--green-dark);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; font-weight: 800;
+      flex-shrink: 0;
+    }
+    .review-name { font-size: 14px; font-weight: 700; }
+    .review-date { font-size: 12px; color: var(--muted); }
+    .stars { color: #f5b400; font-size: 14px; letter-spacing: 1px; }
+    .review-text { font-size: 13px; color: #374151; line-height: 1.6; }
+    .verified {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      color: var(--green);
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    /* TRUST BADGES */
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .trust-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      padding: 14px 8px;
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      text-align: center;
+    }
+    .trust-icon { font-size: 24px; }
+    .trust-label { font-size: 12px; font-weight: 700; color: #0c1a10; line-height: 1.3; }
+
+    /* FINAL CTA */
+    .final-cta {
+      background: linear-gradient(160deg, #0a9e45 0%, #077c35 100%);
+      padding: 28px 20px;
+      text-align: center;
+      color: #fff;
+    }
+    .final-cta h2 { font-size: 22px; font-weight: 900; letter-spacing: -.02em; margin-bottom: 6px; }
+    .final-cta p { font-size: 14px; opacity: .85; margin-bottom: 20px; line-height: 1.5; }
+    .btn-final {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #fff;
+      color: var(--green-dark);
+      padding: 18px 24px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: -.01em;
+      box-shadow: 0 6px 24px rgba(0,0,0,.18);
+      transition: transform .15s;
+    }
+    .btn-final:active { transform: scale(.98); }
+
+    /* FOOTER */
+    footer {
+      background: #111;
+      color: #9ca3af;
+      text-align: center;
+      font-size: 12px;
+      padding: 22px 20px;
+      line-height: 1.8;
+    }
+    footer strong { color: #fff; }
+
+    /* PIX ICON */
+    .pix-icon {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background: #32bcad;
+      mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.5 7.5l5.5 5.5-5.5 5.5' /%3E%3C/svg%3E") center/contain no-repeat;
+      border-radius: 3px;
+    }
+
+    @media (max-width: 360px) {
+      .hero h1 { font-size: 25px; }
+      .price-main { font-size: 40px; }
+      .digit-box { font-size: 22px; min-width: 46px; padding: 7px 10px; }
+    }
   </style>
 </head>
 <body>
 
-<div class="container">
-  <header>Oferta da Semana</header>
+<div class="topbar">
+  🚚 Frete grátis para todo o Brasil <span>ATIVO</span>
+</div>
 
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">🔥 OfertaHoje</div>
+    <div class="trust-pill">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Compra Segura
+    </div>
+  </header>
+
+  <!-- HERO -->
   <div class="hero">
-    <img src="https://i.imgur.com/t7CcwJ8.png" alt="Fogão Electrolux 4 Bocas">
+    <div class="eyebrow">
+      <span class="eyebrow-dot"></span>
+      Oferta Relâmpago — Hoje
+    </div>
+    <h1>Fogão Electrolux<br><em>4 Bocas</em> com Forno</h1>
+    <p class="hero-sub">Design moderno, acendimento automático<br>e forno amplo para sua cozinha.</p>
+    <div class="hero-img-wrap">
+      <img src="https://i.imgur.com/t7CcwJ8.png" alt="Fogão Electrolux 4 Bocas"/>
+      <div class="badge-float">
+        <small>economize</small>
+        79%
+      </div>
+    </div>
   </div>
 
-  <div class="content">
-    <span class="badge">Frete para todo Brasil</span>
-    <h1>Fogão Electrolux 4 Bocas</h1>
-    <p>Mais praticidade, design moderno e forno amplo para sua cozinha.</p>
-
-    <p class="old">De R$ 699,90</p>
-    <div class="price">R$ 149,90</div>
-
-    <div class="benefits">
-      <p>✅ Acendimento automático</p>
-      <p>✅ Forno amplo e espaçoso</p>
-      <p>✅ Fácil limpeza</p>
-      <p>✅ Produto novo e original</p>
-      <p>✅ Compra segura via PIX</p>
+  <!-- PRICE STRIP -->
+  <div class="price-strip">
+    <div style="font-size:13px;color:var(--muted);margin-bottom:4px;">Preço especial hoje</div>
+    <div class="price-row">
+      <div class="price-main">R$&nbsp;149<span class="price-cents">,90</span></div>
+      <div class="price-old">de R$ 699,90</div>
     </div>
-
-    <div class="timer">
-      <p>Oferta reservada por:</p>
-      <strong id="countdown">14:59</strong>
-      <p>Finalize antes que a disponibilidade seja atualizada.</p>
+    <div class="price-save">
+      🎯 Você economiza R$ 550,00 agora
     </div>
+    <div class="installment">Ou em até 12x no cartão • PIX com desconto imediato</div>
+  </div>
 
-    <a class="btn" href="https://checkoutseguro.ru/checkout/cmqeoftfl0dwf01pw6jdk15v1?offer=M9E3YRZ">
-      COMPRAR AGORA
+  <!-- TIMER -->
+  <div class="timer-wrap">
+    <div class="timer-label">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Oferta reservada por
+    </div>
+    <div class="timer-digits">
+      <div class="digit-box" id="t-min">14</div>
+      <div class="digit-sep">:</div>
+      <div class="digit-box" id="t-sec">59</div>
+    </div>
+    <div class="timer-note">⚠️ Preço pode ser atualizado ao expirar o tempo</div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-wrap">
+    <a class="btn-cta" href="https://checkoutseguro.ru/checkout/cmqeoftfl0dwf01pw6jdk15v1?offer=M9E3YRZ">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      GARANTIR MINHA OFERTA
+    </a>
+    <div class="btn-cta-sub">
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Pagamento seguro
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        PIX disponível
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        Cartão aceito
+      </span>
+    </div>
+  </div>
+
+  <!-- SOCIAL BAR -->
+  <div class="social-bar">
+    <div class="social-item">
+      <span class="social-num">4.820</span>
+      <span class="social-label">unidades vendidas</span>
+    </div>
+    <div class="social-item">
+      <span class="social-num">4,9 ★</span>
+      <span class="social-label">avaliação média</span>
+    </div>
+    <div class="social-item">
+      <span class="social-num">97%</span>
+      <span class="social-label">recomendam</span>
+    </div>
+  </div>
+
+  <!-- BENEFITS -->
+  <section>
+    <div class="section-title">Por que vale cada centavo</div>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">🔥</div>
+        <div class="benefit-title">Acendimento automático</div>
+        <div class="benefit-desc">Sem fósforo, sem trabalho. Acende com um clique.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🍕</div>
+        <div class="benefit-title">Forno amplo</div>
+        <div class="benefit-desc">Espaço generoso para assar com perfeição.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">✨</div>
+        <div class="benefit-title">Fácil limpeza</div>
+        <div class="benefit-desc">Grades removíveis e superfície lisa.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">📦</div>
+        <div class="benefit-title">Novo e original</div>
+        <div class="benefit-desc">Produto 100% original, lacrado de fábrica.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🎨</div>
+        <div class="benefit-title">Design moderno</div>
+        <div class="benefit-desc">Visual que combina com qualquer cozinha.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🚚</div>
+        <div class="benefit-title">Frete grátis</div>
+        <div class="benefit-desc">Entrega para qualquer cidade do Brasil.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section style="padding-top:0;">
+    <div class="section-title">Veja de perto</div>
+    <div class="gallery">
+      <img src="https://i.imgur.com/IHTImFO.png" alt="Fogão completo" loading="lazy"/>
+      <img src="https://i.imgur.com/KclXqNe.png" alt="Detalhe bocas" loading="lazy"/>
+      <img src="https://i.imgur.com/sIwIaq2.png" alt="Detalhe forno" loading="lazy"/>
+      <img src="https://i.imgur.com/bYoo1vQ.png" alt="Lateral" loading="lazy"/>
+      <img src="https://i.imgur.com/YYjSZCi.png" alt="Visão geral" loading="lazy"/>
+      <img src="https://i.imgur.com/KwZ4faP.png" alt="Acendimento" loading="lazy"/>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <div class="section-title">Como funciona a compra</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">Clique em "Garantir minha oferta"</div>
+          <div class="step-desc">Você vai para uma página de checkout 100% segura.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">Escolha a forma de pagamento</div>
+          <div class="step-desc">PIX à vista ou cartão em até 12x sem juros.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-title">Pedido confirmado</div>
+          <div class="step-desc">Você recebe confirmação por e-mail em instantes.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <div class="step-title">Produto entregue na sua porta</div>
+          <div class="step-desc">Embalagem reforçada com rastreamento de ponta a ponta.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section style="background:#f9fafb; padding:24px 20px;">
+    <div class="section-title">O que nossos clientes dizem</div>
+    <div class="reviews">
+
+      <div class="review">
+        <div class="review-top">
+          <div class="avatar">MS</div>
+          <div>
+            <div class="review-name">Maria S.</div>
+            <div class="review-date">há 3 dias</div>
+          </div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <div class="review-text" style="margin-top:6px">Chegou super bem embalado e antes do prazo. Fogão bonito, de qualidade, e o forno é bem espaçoso. Superou minhas expectativas!</div>
+        <div class="verified">✔ Compra verificada</div>
+      </div>
+
+      <div class="review">
+        <div class="review-top">
+          <div class="avatar">CA</div>
+          <div>
+            <div class="review-name">Carlos A.</div>
+            <div class="review-date">há 5 dias</div>
+          </div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <div class="review-text" style="margin-top:6px">Atendimento excelente, responderam rápido todas as minhas dúvidas. O fogão chegou certinho, funcionando perfeitamente. Recomendo!</div>
+        <div class="verified">✔ Compra verificada</div>
+      </div>
+
+      <div class="review">
+        <div class="review-top">
+          <div class="avatar">JR</div>
+          <div>
+            <div class="review-name">Juliana R.</div>
+            <div class="review-date">há 1 semana</div>
+          </div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <div class="review-text" style="margin-top:6px">Produto bonito e de fácil limpeza. As grades são removíveis, facilita muito. O design combinou perfeitamente com a minha cozinha.</div>
+        <div class="verified">✔ Compra verificada</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TRUST BADGES -->
+  <section>
+    <div class="section-title">Sua segurança é prioridade</div>
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-icon">🔒</div>
+        <div class="trust-label">Pagamento protegido</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">📦</div>
+        <div class="trust-label">Embalagem reforçada</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🚚</div>
+        <div class="trust-label">Rastreamento online</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">💬</div>
+        <div class="trust-label">Suporte ao cliente</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">✅</div>
+        <div class="trust-label">Produto original</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🏷️</div>
+        <div class="trust-label">Melhor preço</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <div class="final-cta">
+    <h2>Não perca esta oferta!</h2>
+    <p>Restam poucas unidades com este preço especial.<br>Garanta o seu fogão agora com frete grátis.</p>
+    <a class="btn-final" href="https://checkoutseguro.ru/checkout/cmqeoftfl0dwf01pw6jdk15v1?offer=M9E3YRZ">
+      🛒 COMPRAR AGORA — R$ 149,90
     </a>
   </div>
 
-  <div class="gallery">
-    <img src="https://i.imgur.com/IHTImFO.png">
-    <img src="https://i.imgur.com/KclXqNe.png">
-    <img src="https://i.imgur.com/sIwIaq2.png">
-    <img src="https://i.imgur.com/bYoo1vQ.png">
-    <img src="https://i.imgur.com/YYjSZCi.png">
-    <img src="https://i.imgur.com/KwZ4faP.png">
-  </div>
-
-  <div class="comments">
-    <h2>Comentários de compradores</h2><br>
-
-    <div class="comment">
-      <div class="stars">★★★★★</div>
-      <p>Chegou bem embalado e antes do prazo. Gostei bastante do produto.</p>
-      <div class="name">Maria S.</div>
-    </div>
-
-    <div class="comment">
-      <div class="stars">★★★★★</div>
-      <p>Compra tranquila, atendimento respondeu rápido e o fogão veio certinho.</p>
-      <div class="name">Carlos A.</div>
-    </div>
-
-    <div class="comment">
-      <div class="stars">★★★★★</div>
-      <p>Produto bonito, forno espaçoso e fácil de limpar. Recomendo.</p>
-      <div class="name">Juliana R.</div>
-    </div>
-  </div>
-
+  <!-- FOOTER -->
   <footer>
-    Compra segura • Pagamento protegido • Suporte ao cliente
+    <strong>OfertaHoje</strong><br>
+    Compra segura • Pagamento protegido • Suporte ao cliente<br>
+    <span style="font-size:11px;opacity:.6">Este site utiliza criptografia SSL para proteger seus dados.</span>
   </footer>
+
 </div>
 
 <script>
-  let time = 14 * 60 + 59;
-  const countdown = document.getElementById("countdown");
+  let total = 14 * 60 + 59;
+  const min = document.getElementById('t-min');
+  const sec = document.getElementById('t-sec');
 
-  setInterval(() => {
-    let minutes = Math.floor(time / 60);
-    let seconds = time % 60;
-    countdown.textContent =
-      String(minutes).padStart(2, "0") + ":" + String(seconds).padStart(2, "0");
-
-    if (time > 0) time--;
-  }, 1000);
+  function tick() {
+    if (total < 0) { total = 0; }
+    const m = Math.floor(total / 60);
+    const s = total % 60;
+    min.textContent = String(m).padStart(2, '0');
+    sec.textContent = String(s).padStart(2, '0');
+    if (total > 0) { total--; setTimeout(tick, 1000); }
+  }
+  tick();
 </script>
 
 </body>
